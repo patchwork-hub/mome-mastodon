@@ -233,9 +233,9 @@ gem 'hcaptcha', '~> 7.1'
 
 gem 'mail', '~> 2.8'
 
-gem 'accounts', git: 'https://github.com/patchwork-hub/accounts', branch: 'main'
+gem 'accounts', git: 'https://github.com/patchwork-hub/accounts', branch: 'mome_accounts'
 gem 'conversations', git: 'https://github.com/patchwork-hub/conversations', branch: 'main'
-gem 'posts', git: 'https://github.com/patchwork-hub/posts', branch: 'main'
+gem 'posts', git: 'https://github.com/patchwork-hub/posts', branch: 'mome_posts'
 
 # gem 'accounts', path: '/Users/macbookpro/workplace/patchwork/accounts'
 # gem 'posts', path: '/Users/macbookpro/workplace/patchwork/posts'

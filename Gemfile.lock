@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/accounts
-  revision: 156882f07efe9ac38072fc263b3922b1c78e9bfb
-  branch: main
+  revision: 4db5689912e662430cb9c8969261bd53ee44a9dd
+  branch: mome_accounts
   specs:
     accounts (0.1.0)
       byebug
@@ -30,8 +30,8 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/posts
-  revision: 40272ad9f9d5f1352d99ded463d889f53548c411
-  branch: main
+  revision: 5460fcb79eab8bca28c1c8afa2cbd141f9cc9c1e
+  branch: mome_posts
   specs:
     posts (0.1.0)
       annotaterb
