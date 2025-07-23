@@ -510,6 +510,7 @@ class User < ApplicationRecord
   end
 
   def prepare_new_user!
+    auto_follow_default_accounts
     BootstrapTimelineWorker.perform_async(account_id)
     ActivityTracker.increment('activity:accounts:local')
     ActivityTracker.record('activity:logins', id)
@@ -554,5 +555,10 @@ class User < ApplicationRecord
 
   def trigger_webhooks
     TriggerWebhookWorker.perform_async('account.created', 'Account', account_id)
+  end
+
+  def auto_follow_default_accounts
+    return unless account&.local?
+    AutoFollowDefaultAccountsService.new.call(account)
   end
 end
