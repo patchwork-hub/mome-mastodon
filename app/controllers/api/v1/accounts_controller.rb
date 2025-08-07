@@ -32,6 +32,10 @@ class Api::V1::AccountsController < Api::BaseController
   end
 
   def create
+    # Temporary fix to pass Reason Required Setting
+    # This should be removed once the frontend is updated to handle the reason field properly.
+    account_params[:reason] = 'I would like to join the Mo-Me app.' if account_params[:reason].blank? && Setting.require_invite_text
+
     token    = AppSignUpService.new.call(doorkeeper_token.application, request.remote_ip, account_params)
     response = Doorkeeper::OAuth::TokenResponse.new(token)
 
