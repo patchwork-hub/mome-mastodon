@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/posts
-  revision: c82b9f5d2de3b2ac698e43c1d2bd6621bd63d631
+  revision: b35dbcccdba1fa9e4f404796571a2ed6d0e0ebbc
   branch: mome_posts
   specs:
     posts (0.1.0)
