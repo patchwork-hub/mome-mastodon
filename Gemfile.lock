@@ -19,6 +19,14 @@ GIT
       rails (~> 8.0)
 
 GIT
+  remote: https://github.com/patchwork-hub/bluesky_bridge
+  revision: 3943a7617d502138ab816f1baab1d8cdab367cff
+  branch: main
+  specs:
+    bluesky_bridge (0.1.0)
+      rails (>= 8.0)
+
+GIT
   remote: https://github.com/patchwork-hub/content_filters
   revision: 862288d7a5ebf8c7f5421299b4941c6078632f0a
   branch: mome_content_filter
@@ -1046,6 +1054,7 @@ DEPENDENCIES
   aws-sdk-s3 (~> 1.123)
   better_errors (~> 2.9)
   binding_of_caller (~> 1.0)
+  bluesky_bridge!
   blurhash (~> 0.1)
   bootsnap (~> 1.18.0)
   brakeman (~> 7.0)
