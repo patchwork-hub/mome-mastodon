@@ -7,12 +7,14 @@
 #  id                        :bigint(8)        not null, primary key
 #  age_verified_at           :datetime
 #  approved                  :boolean          default(TRUE), not null
+#  bluesky_bridge_enabled    :boolean          default(FALSE), not null
 #  chosen_languages          :string           is an Array
 #  confirmation_sent_at      :datetime
 #  confirmation_token        :string
 #  confirmed_at              :datetime
 #  consumed_timestep         :integer
 #  current_sign_in_at        :datetime
+#  did_value                 :string
 #  disabled                  :boolean          default(FALSE), not null
 #  email                     :string           default(""), not null
 #  encrypted_otp_secret      :string
@@ -559,6 +561,7 @@ class User < ApplicationRecord
 
   def auto_follow_default_accounts
     return unless account&.local?
+
     AutoFollowDefaultAccountsService.new.call(account)
   end
 end
