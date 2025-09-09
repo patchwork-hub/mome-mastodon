@@ -19,6 +19,14 @@ GIT
       rails (~> 8.0)
 
 GIT
+  remote: https://github.com/patchwork-hub/bluesky_bridge
+  revision: ab9c6f21463078565d65b01de0d3bc4fba4b8451
+  branch: main
+  specs:
+    bluesky_bridge (0.1.0)
+      rails (>= 8.0)
+
+GIT
   remote: https://github.com/patchwork-hub/content_filters
   revision: 862288d7a5ebf8c7f5421299b4941c6078632f0a
   branch: mome_content_filter
@@ -28,12 +36,12 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/conversations
-  revision: c92f4b11891bfc6a21390776e403e314f6936b3e
+  revision: 799a5be90f0199bc42b9fd57b314c218a34bd69d
   branch: main
   specs:
     conversations (0.1.0)
-      annotaterb
-      byebug
+      annotaterb (~> 4.13)
+      byebug (~> 11.1)
       rails (~> 8.0)
 
 GIT
@@ -177,7 +185,7 @@ GEM
     bundler-audit (0.9.2)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
-    byebug (12.0.0)
+    byebug (11.1.3)
     capybara (3.40.0)
       addressable
       matrix
@@ -287,7 +295,7 @@ GEM
     fast_blank (1.0.1)
     fastimage (2.4.0)
     ffi (1.17.2)
-    ffi (1.17.2-x86_64-linux-gnu)
+    ffi (1.17.2-x86_64-darwin)
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
       rake
@@ -321,7 +329,7 @@ GEM
     google-protobuf (4.30.2)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.30.2-x86_64-linux)
+    google-protobuf (4.30.2-x86_64-darwin)
       bigdecimal
       rake (>= 13)
     googleapis-common-protos-types (1.19.0)
@@ -509,7 +517,6 @@ GEM
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2025.0507)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
     minitest (5.25.5)
     msgpack (1.8.0)
     multi_json (1.15.0)
@@ -532,10 +539,7 @@ GEM
       net-protocol
     net_http_timeout_errors (1.0.0)
     nio4r (2.7.4)
-    nokogiri (1.18.8)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
-    nokogiri (1.18.8-x86_64-linux-gnu)
+    nokogiri (1.18.8-x86_64-darwin)
       racc (~> 1.4)
     oga (3.4)
       ast
@@ -1034,8 +1038,7 @@ GEM
     zeitwerk (2.7.2)
 
 PLATFORMS
-  ruby
-  x86_64-linux
+  x86_64-darwin-23
 
 DEPENDENCIES
   accounts!
@@ -1046,6 +1049,7 @@ DEPENDENCIES
   aws-sdk-s3 (~> 1.123)
   better_errors (~> 2.9)
   binding_of_caller (~> 1.0)
+  bluesky_bridge!
   blurhash (~> 0.1)
   bootsnap (~> 1.18.0)
   brakeman (~> 7.0)
