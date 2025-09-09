@@ -119,7 +119,6 @@ RUN \
   tzdata \
   wget \
     unzip \
-
   ; \
   # Patch Ruby to use jemalloc
   patchelf --add-needed libjemalloc.so.2 /usr/local/bin/ruby; \
@@ -128,9 +127,12 @@ RUN \
   patchelf \
   ;
 
-#install aws cli 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip
-RUN ./aws/install && aws --version
+# Install AWS CLI
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    ./aws/install && \
+    rm -rf aws awscliv2.zip && \
+    aws --version
 
 # Create temporary build layer from base image
 FROM ruby AS build
@@ -314,6 +316,8 @@ RUN \
   ldconfig; \
   # Use Ruby on Rails to create Mastodon assets
   SECRET_KEY_BASE_DUMMY=1 \
+  RAILS_ENV=production \
+  MASTODON_REDIS_SKIP=true \
   bundle exec rails assets:precompile; \
   # Cleanup temporary files
   rm -fr /opt/mastodon/tmp;
