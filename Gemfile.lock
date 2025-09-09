@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/bluesky_bridge
-  revision: 2691434020477ceee2cdc7500594538180ab8bc5
+  revision: f80a1777cf3116a3ca5b6411e10a19f65cf77521
   branch: main
   specs:
     bluesky_bridge (0.1.0)
