@@ -20,8 +20,8 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/bluesky_bridge
-  revision: a811b96ec4c8285ad5053bc231c10c8418b345c9
-  branch: main
+  revision: 0dce9c3fb95f9379d06216f88d25cc2ca1b73ff9
+  ref: 0dce9c3fb95f9379d06216f88d25cc2ca1b73ff9
   specs:
     bluesky_bridge (0.1.0)
       rails (>= 8.0)
@@ -1039,7 +1039,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-23
-  x86_64-linux
+  x86_64-darwin-24
 
 DEPENDENCIES
   accounts!
