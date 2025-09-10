@@ -234,7 +234,6 @@ gem 'hcaptcha', '~> 7.1'
 gem 'mail', '~> 2.8'
 
 gem 'accounts', git: 'https://github.com/patchwork-hub/accounts', branch: 'mome_accounts'
-gem 'bluesky_bridge', git: 'https://github.com/patchwork-hub/bluesky_bridge', ref: '0dce9c3fb95f9379d06216f88d25cc2ca1b73ff9'
 gem 'content_filters', git: 'https://github.com/patchwork-hub/content_filters', branch: 'mome_content_filter'
 gem 'conversations', git: 'https://github.com/patchwork-hub/conversations', branch: 'main'
 gem 'posts', git: 'https://github.com/patchwork-hub/posts', branch: 'mome_posts'
