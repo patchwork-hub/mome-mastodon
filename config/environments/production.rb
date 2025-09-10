@@ -61,9 +61,10 @@ Rails.application.configure do
   config.log_tags = [:request_id]
 
   # "info" includes generic and useful information about system operation, but avoids logging too much
-  # information to avoid inadvertent exposure of personally identifiable information (PII). If you
-  # want to log everything, set the level to "debug".
-  config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'info')
+  # information to avoid inadvertent exposure of personally identifiable information (PII).
+  # Supported levels: debug, info, warn, error, fatal, unknown
+  log_level_string = ENV.fetch('RAILS_LOG_LEVEL', 'info').to_s.downcase
+  config.log_level = (`allowed_log_levels`.include?(log_level_string) ? log_level_string : 'info').to_sym
 
   # Use a different cache store in production.
   config.cache_store = :redis_cache_store, REDIS_CONFIGURATION.cache
