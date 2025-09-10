@@ -288,6 +288,7 @@ GEM
     fastimage (2.4.0)
     ffi (1.17.2)
     ffi (1.17.2-x86_64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
       rake
@@ -322,6 +323,9 @@ GEM
       bigdecimal
       rake (>= 13)
     google-protobuf (4.30.2-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.30.2-x86_64-linux)
       bigdecimal
       rake (>= 13)
     googleapis-common-protos-types (1.19.0)
@@ -532,6 +536,8 @@ GEM
     net_http_timeout_errors (1.0.0)
     nio4r (2.7.4)
     nokogiri (1.18.8-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     oga (3.4)
       ast
@@ -1032,6 +1038,7 @@ GEM
 PLATFORMS
   x86_64-darwin-23
   x86_64-darwin-24
+  x86_64-linux
 
 DEPENDENCIES
   accounts!
