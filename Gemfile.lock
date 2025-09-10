@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/accounts
-  revision: 1602776c2148c332f4c91af5bd1ed03ba7999ca3
-  branch: mome_accounts
+  revision: 34f3f62b5bef2019fda91b9eff0125291a086959
+  branch: main
   specs:
     accounts (0.1.0)
       byebug
@@ -20,11 +20,11 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/content_filters
-  revision: 862288d7a5ebf8c7f5421299b4941c6078632f0a
-  branch: mome_content_filter
+  revision: 6ca9cb322b0a41895763951cf142db92a87c54be
+  branch: main
   specs:
     content_filters (0.1.0)
-      rails (>= 7.1.1)
+      rails (~> 8.0)
 
 GIT
   remote: https://github.com/patchwork-hub/conversations
@@ -38,13 +38,13 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/posts
-  revision: b7a54ce27b20cf0e3ef79d1e6c2cc3b9580ca439
-  branch: mome_posts
+  revision: a876fa23ff82906136af62f5bd891c8ca5a258e3
+  branch: main
   specs:
     posts (0.1.0)
-      annotaterb
-      byebug
-      link_thumbnailer
+      annotaterb (~> 4.13)
+      byebug (~> 11.1)
+      link_thumbnailer (~> 3.4)
       rails (~> 8.0)
 
 GEM
