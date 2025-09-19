@@ -9,13 +9,13 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/accounts
-  revision: 34f3f62b5bef2019fda91b9eff0125291a086959
+  revision: a72555f3a76f7252adecb31fa8580765a4e23bb5
   branch: main
   specs:
     accounts (0.1.0)
-      byebug
+      byebug (~> 11.1)
       googleauth (~> 1.13, >= 1.13.1)
-      httparty
+      httparty (~> 0.23.1)
       rails (~> 8.0)
 
 GIT
