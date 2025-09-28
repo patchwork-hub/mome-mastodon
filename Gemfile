@@ -236,6 +236,7 @@ gem 'mail', '~> 2.8'
 gem 'accounts', git: 'https://github.com/patchwork-hub/accounts', branch: 'main'
 gem 'content_filters', git: 'https://github.com/patchwork-hub/content_filters', branch: 'main'
 gem 'conversations', git: 'https://github.com/patchwork-hub/conversations', branch: 'main'
+gem 'custom_feeds', git: 'https://github.com/patchwork-hub/custom_feeds', branch: 'main'
 gem 'posts', git: 'https://github.com/patchwork-hub/posts', branch: 'main'
 
 # *** Add this alongside Post Gems ***
@@ -246,3 +247,4 @@ gem 'faraday-typhoeus', '~> 1.1'
 # gem 'conversations', path: '/Users/macbookpro/workplace/patchwork/conversations'
 # gem 'content_filters', path: '/Users/macbookpro/workplace/patchwork/content_filters'
 # gem 'bluesky_bridge', path: '/Users/macbookpro/workplace/patchwork/bluesky_bridge'
+# gem 'custom_feeds', path: '/Users/macbookpro/workspace/custom_feeds'
