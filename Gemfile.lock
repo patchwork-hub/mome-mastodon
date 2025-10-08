@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/accounts
-  revision: f8941d286831e3ade83b8d7c2696d35c0e7b6986
+  revision: 059fafa231f14335e1106f4cffcdd7273910d949
   branch: main
   specs:
     accounts (0.1.0)
@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/posts
-  revision: 66e9aa39ad318412aeed92e1b4b4a79f290c6c59
+  revision: 490ce7b8a7d0b0dee3b2500cc3cb4c0b8322ee01
   branch: main
   specs:
     posts (0.1.0)
