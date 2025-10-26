@@ -244,18 +244,18 @@ jobs:
           cluster: ${{ secrets.CLUSTER_NAME }}
           wait-for-service-stability: false
 
-      # - name: Update Streaming task definition
-      #   id: task-def-streaming
-      #   uses: aws-actions/amazon-ecs-render-task-definition@v1
-      #   with:
-      #     task-definition: ${{ env.STREAMING_DEFINITION }}
-      #     container-name: ${{ secrets.STREAMING_PRODUCTION_CONTAINER_NAME }}
-      #     image: ${{ secrets.STREAMING_PRODUCTION_IMAGE }}
+      - name: Update Streaming task definition
+        id: task-def-streaming
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition: ${{ env.STREAMING_DEFINITION }}
+          container-name: ${{ secrets.STREAMING_PRODUCTION_CONTAINER_NAME }}
+          image: ${{ secrets.STREAMING_PRODUCTION_IMAGE }}
 
-      # - name: Deploy Streaming service
-      #   uses: aws-actions/amazon-ecs-deploy-task-definition@v2
-      #   with:
-      #     task-definition: ${{ steps.task-def-streaming.outputs.task-definition }}
-      #     service: ${{ secrets.STREAMING_PRODUCTION_SERVICE_NAME }}
-      #     cluster: ${{ secrets.CLUSTER_NAME }}
-      #     wait-for-service-stability: false
+      - name: Deploy Streaming service
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition: ${{ steps.task-def-streaming.outputs.task-definition }}
+          service: ${{ secrets.STREAMING_PRODUCTION_SERVICE_NAME }}
+          cluster: ${{ secrets.CLUSTER_NAME }}
+          wait-for-service-stability: false
