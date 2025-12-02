@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/patchwork-hub/posts
-  revision: d88364e91a6bb42dc027992678e4b1545346a042
+  revision: 626888ff2bd944d1a79926657ae54891e4b78d80
   branch: patchwork_only
   specs:
     posts (0.1.0)
