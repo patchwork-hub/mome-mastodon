@@ -60,6 +60,8 @@ export const COMPOSE_COMPOSING_CHANGE    = 'COMPOSE_COMPOSING_CHANGE';
 export const COMPOSE_LANGUAGE_CHANGE     = 'COMPOSE_LANGUAGE_CHANGE';
 
 export const COMPOSE_FEDERATED_CHANGE   = 'COMPOSE_FEDERATED_CHANGE';
+export const COMPOSE_FEDERATED_INIT   = 'COMPOSE_FEDERATED_INIT';
+
 export const COMPOSE_EMOJI_INSERT = 'COMPOSE_EMOJI_INSERT';
 
 export const COMPOSE_UPLOAD_CHANGE_REQUEST     = 'COMPOSE_UPLOAD_UPDATE_REQUEST';
@@ -536,6 +538,30 @@ export function clearComposeSuggestions() {
   };
 }
 
+
+export function fetchLocalOnlySetting() {
+  return (dispatch, getState) => {
+    api().get('/api/v1/utilities/getLocalOnlySetting')
+      .then(({ data }) => {
+        const federated = !data.local_only;
+
+        dispatch({
+          type: COMPOSE_FEDERATED_INIT,
+          value: federated, 
+          localOnlyEnabled: data.local_only,
+        });
+      })
+      .catch(error => {
+        console.error("Failed to fetch local_only setting", error);
+        dispatch({
+          type: COMPOSE_FEDERATED_INIT,
+          value: false,
+          localOnlyEnabled: false,
+        });
+      });
+  };
+}
+
 const fetchComposeSuggestionsAccounts = throttle((dispatch, getState, token) => {
   if (fetchComposeSuggestionsAccountsController) {
     fetchComposeSuggestionsAccountsController.abort();
@@ -779,6 +805,7 @@ export function changeComposeFederated(value) {
     value,
   };
 }
+
 
 export function insertEmojiCompose(position, emoji, needsSpace) {
   return {

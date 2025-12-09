@@ -37,6 +37,7 @@ import {
   COMPOSE_FEDERATED_CHANGE,
   COMPOSE_LANGUAGE_CHANGE,
   COMPOSE_COMPOSING_CHANGE,
+  COMPOSE_FEDERATED_INIT,
   COMPOSE_EMOJI_INSERT,
   COMPOSE_RESET,
   COMPOSE_POLL_ADD,
@@ -83,7 +84,8 @@ const initialState = ImmutableMap({
   resetFileKey: Math.floor((Math.random() * 0x10000)),
   idempotencyKey: null,
   tagHistory: ImmutableList(),
-  federated: false
+  federated: false,
+  localOnlyFeatureEnabled: false,
 });
 
 const initialPoll = ImmutableMap({
@@ -365,6 +367,12 @@ export const composeReducer = (state = initialState, action) => {
     return state
       .set('federated', action.value)
       .set('idempotencyKey', uuid());
+  case COMPOSE_FEDERATED_INIT:
+  return state
+    .set('federated', action.value)
+    .set('localOnlyFeatureEnabled', action.localOnlyEnabled)
+    .set('idempotencyKey', uuid());
+
   case COMPOSE_REPLY:
     return state.withMutations(map => {
       map.set('id', null);

@@ -9,6 +9,7 @@ import {
   changeComposeSpoilerText,
   insertEmojiCompose,
   uploadCompose,
+  fetchLocalOnlySetting
 } from 'mastodon/actions/compose';
 import { openModal } from 'mastodon/actions/modal';
 
@@ -21,6 +22,7 @@ const mapStateToProps = state => ({
   spoilerText: state.getIn(['compose', 'spoiler_text']),
   privacy: state.getIn(['compose', 'privacy']),
   federated: state.getIn(['compose', 'federated']),
+  localOnlyEnabled: state.getIn(['compose', 'localOnlyFeatureEnabled'], false),
   focusDate: state.getIn(['compose', 'focusDate']),
   caretPosition: state.getIn(['compose', 'caretPosition']),
   preselectDate: state.getIn(['compose', 'preselectDate']),
@@ -39,6 +41,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   onChange (text) {
     dispatch(changeCompose(text));
+  },
+
+  fetchLocalOnlySetting: () => {
+    dispatch(fetchLocalOnlySetting());
   },
 
   onSubmit (missingAltText) {

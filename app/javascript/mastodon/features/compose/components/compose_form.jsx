@@ -47,6 +47,7 @@ class ComposeForm extends ImmutablePureComponent {
     intl: PropTypes.object.isRequired,
     text: PropTypes.string.isRequired,
     suggestions: ImmutablePropTypes.list,
+    fetchLocalOnlySetting: PropTypes.func.isRequired,
     spoiler: PropTypes.bool,
     privacy: PropTypes.string,
     spoilerText: PropTypes.string,
@@ -159,6 +160,7 @@ class ComposeForm extends ImmutablePureComponent {
 
   componentDidMount () {
     this._updateFocusAndSelection({ });
+    this.props.fetchLocalOnlySetting();
   }
 
   componentWillUnmount () {
@@ -291,7 +293,7 @@ class ComposeForm extends ImmutablePureComponent {
             <div className='compose-form__dropdowns'>
               <PrivacyDropdownContainer disabled={this.props.isEditing} />
               <LanguageDropdown />
-              <FederatedContainer disabled={this.props.isEditing} />
+              {this.props.localOnlyEnabled && <FederatedContainer disabled={this.props.isEditing} />}
             </div>
 
             <div className='compose-form__actions'>
