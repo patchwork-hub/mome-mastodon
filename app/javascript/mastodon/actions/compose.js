@@ -547,7 +547,6 @@ export function fetchLocalOnlySetting() {
 
         dispatch({
           type: COMPOSE_FEDERATED_INIT,
-          value: federated, 
           localOnlyEnabled: data.local_only,
         });
       })
@@ -555,7 +554,6 @@ export function fetchLocalOnlySetting() {
         console.error("Failed to fetch local_only setting", error);
         dispatch({
           type: COMPOSE_FEDERATED_INIT,
-          value: false,
           localOnlyEnabled: false,
         });
       });

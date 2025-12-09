@@ -84,7 +84,7 @@ const initialState = ImmutableMap({
   resetFileKey: Math.floor((Math.random() * 0x10000)),
   idempotencyKey: null,
   tagHistory: ImmutableList(),
-  federated: false,
+  federated: true,
   localOnlyFeatureEnabled: false,
 });
 
@@ -369,7 +369,6 @@ export const composeReducer = (state = initialState, action) => {
       .set('idempotencyKey', uuid());
   case COMPOSE_FEDERATED_INIT:
   return state
-    .set('federated', action.value)
     .set('localOnlyFeatureEnabled', action.localOnlyEnabled)
     .set('idempotencyKey', uuid());
 
