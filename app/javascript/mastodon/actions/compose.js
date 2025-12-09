@@ -229,7 +229,7 @@ export function submitCompose() {
         visibility: getState().getIn(['compose', 'privacy']),
         poll: getState().getIn(['compose', 'poll'], null),
         language: getState().getIn(['compose', 'language']),
-        federated: getState().getIn(['compose', 'federated']),
+        local_only: !getState().getIn(['compose', 'federated']),
       },
       headers: {
         'Idempotency-Key': getState().getIn(['compose', 'idempotencyKey']),

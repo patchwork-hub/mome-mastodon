@@ -83,7 +83,7 @@ const initialState = ImmutableMap({
   resetFileKey: Math.floor((Math.random() * 0x10000)),
   idempotencyKey: null,
   tagHistory: ImmutableList(),
-  federated: true
+  federated: false
 });
 
 const initialPoll = ImmutableMap({
