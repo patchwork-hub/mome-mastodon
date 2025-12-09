@@ -12,6 +12,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import AlternateEmailIcon from '@/material-icons/400-24px/alternate_email.svg?react';
+import LinkOffIcon from '@/material-icons/400-24px/link_off.svg?react';
 import { AnimatedNumber } from 'mastodon/components/animated_number';
 import { Avatar } from 'mastodon/components/avatar';
 import { ContentWarning } from 'mastodon/components/content_warning';
@@ -126,6 +127,7 @@ export const DetailedStatus: React.FC<{
   let media;
   let applicationLink;
   let reblogLink;
+  let localOnlyPosts;
   let attachmentAspectRatio;
 
   if (properStatus.get('media_attachments').getIn([0, 'type']) === 'video') {
@@ -248,6 +250,14 @@ export const DetailedStatus: React.FC<{
         >
           {status.getIn(['application', 'name'])}
         </a>
+      </>
+    );
+  }
+
+  if (status.get('local_only')) {
+    localOnlyPosts = (
+      <>
+        ·<Icon id='link-off-icon' icon={LinkOffIcon} />
       </>
     );
   }
@@ -396,6 +406,7 @@ export const DetailedStatus: React.FC<{
 
             {visibilityLink}
             {applicationLink}
+            {localOnlyPosts}
           </div>
 
           {status.get('edited_at') && (
