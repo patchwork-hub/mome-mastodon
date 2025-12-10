@@ -14,7 +14,9 @@ import { Icon } from 'mastodon/components/icon';
 
 const messages = defineMessages({
   federated: { id: 'compose.federated', defaultMessage: 'Federated' },
-  local_only: { id: 'compose.local_only', defaultMessage: 'Local Only' },
+  federated_long: { id: 'compose.federated', defaultMessage: 'Allow toot to reach other instances' },
+  local_only: { id: 'compose.local_only_long', defaultMessage: 'Local Only' },
+  local_only_long: { id: 'compose.local_only_long', defaultMessage: 'Restrict this toot only to my instance' },
 });
 
 class FederatedDropdown extends PureComponent {
@@ -38,12 +40,14 @@ class FederatedDropdown extends PureComponent {
         iconComponent: LinkIcon,
         value: 'federated',
         text: formatMessage(messages.federated),
+        meta: formatMessage(messages.federated_long)
       },
       {
         icon: 'link_off',
         iconComponent: LinkOffIcon,
         value: 'local_only',
         text: formatMessage(messages.local_only),
+        meta: formatMessage(messages.local_only_long)
       },
     ];
 
